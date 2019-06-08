@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue:''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render(){
+    return(
+      <div>
+        <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
+        <RenderInput input={this.state.inputValue}/>
+      </div>
+    );
+  }
+};
 
-export default App;
+class GetInput extends React.Component {
+
+  render() {
+    return(
+      <div className="inputfield">
+        <h3>Get Input:</h3>
+        <input placeholder="Type your text here..." value={this.props.input} onChange={this.props.handleChange}/>
+      </div>
+    );
+    }
+  };
+
+  class RenderInput extends React.Component {
+
+    render(){
+      return (
+        <div id="render">
+          <h3>Input Render:</h3>
+          <p className="text">{this.props.input}</p>
+        </div>
+      );
+    }
+  };
+
+
+export default MyApp;
