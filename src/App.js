@@ -1,5 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
+import MyInfo from "./components/MyInfo"
 import './App.css';
 
 class MyApp extends React.Component {
@@ -31,6 +32,11 @@ class GetInput extends React.Component {
     return(
       <div className="inputfield">
         <h3>Get Input:</h3>
+
+        <a href="./component/MyInfo.js">
+        <button> Navigate to details</button>
+        </a>
+
         <input placeholder="Type your text here..." value={this.props.input} onChange={this.props.handleChange}/>
       </div>
     );
@@ -43,7 +49,10 @@ class GetInput extends React.Component {
       return (
         <div id="render">
           <h3>Input Render:</h3>
-          <p className="text">{this.props.input}</p>
+          <div className="border">
+            <p className="text">{this.props.input}</p>
+          </div>
+          <MyInfo className="footer"/>
         </div>
       );
     }

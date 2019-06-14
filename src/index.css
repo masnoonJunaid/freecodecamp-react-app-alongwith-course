@@ -28,4 +28,17 @@ input{
 
 .text{
   font-size: 2em;
+  color: #008b8b
+}
+.border{
+  border: solid #808080;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#footer{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
