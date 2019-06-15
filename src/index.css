@@ -31,14 +31,31 @@ input{
   color: #008b8b
 }
 .border{
-  border: solid #808080;
   border-radius: 10px;
   margin-left: 20%;
   margin-right: 20%;
 }
 
-#footer{
+#myinfo{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+.list{
+  list-style-type: none;
+  color: purple;
+
+}
+
+.contact-card{
+  width: 25%;
+  display: inline-block;
+  height: 100%;
+  margin: 10%
+
+}
+@media screen and (max-width:800px){
+  .contact-card{
+    display: block;
+  }
 }

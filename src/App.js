@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import MyInfo from "./components/MyInfo"
+import ContactCard from "./components/ContactCard"
 import './App.css';
 
 class MyApp extends React.Component {
@@ -32,11 +33,6 @@ class GetInput extends React.Component {
     return(
       <div className="inputfield">
         <h3>Get Input:</h3>
-
-        <a href="./component/MyInfo.js">
-        <button> Navigate to details</button>
-        </a>
-
         <input placeholder="Type your text here..." value={this.props.input} onChange={this.props.handleChange}/>
       </div>
     );
@@ -50,9 +46,33 @@ class GetInput extends React.Component {
         <div id="render">
           <h3>Input Render:</h3>
           <div className="border">
-            <p className="text">{this.props.input}</p>
+            <p className="text" style={{display:this.props.input?"block":"none"}}>{this.props.input}</p>
           </div>
-          <MyInfo className="footer"/>
+          <MyInfo/>
+          <hr/>
+          <ContactCard
+            contact={{name:"Mr.Erlich Bachman", imgUrl:"http://placekitten.com/300/200",phone:"(222) 555-1234",
+
+            email:"mr.whiskaz@catnap.meow"}}
+            />
+
+          <ContactCard
+            contact={{name:"Mr.Richard Henricks",imgUrl:"http://placekitten.com/400/200",  phone:"(212) 555-2345",
+
+            email:"richardhenrick@me.com"}}
+            />
+
+          <ContactCard
+            contact={{name:"Mr.Gilfoyle",imgUrl:"http://placekitten.com/400/300", phone:"(212) 555-3456",
+
+                email:"ofworlds@yahoo.com"}}
+            />
+          <ContactCard
+            contact={{name:"Mr.Nelson Bughati",imgUrl:"http://placekitten.com/200/100",
+
+            phone:"(122) 555-3456",email:"mrworld@me.com"}}
+
+            />
         </div>
       );
     }

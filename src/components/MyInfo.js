@@ -1,15 +1,17 @@
 import React from "react"
+import '../index.css'
 
 function MyInfo(){
   return (
-    <div>
+    <div id="myinfo">
       <h1>Masnoon Junaid</h1>
-      <p>Still didn't figured out who I am?</p>
-      <ul>
-        <li>Japan</li>
-        <li>Turkey</li>
-        <li>Egypt</li>
-        <li>Maldive</li>
+      <p>All I do is a flex</p>
+      <p>I don't need a reason</p>
+      <ul >
+        <li className="list">Japan</li>
+        <li className="list">Turkey</li>
+        <li className="list">Egypt</li>
+        <li className="list">Maldive</li>
       </ul>
     </div>
   )
