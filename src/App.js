@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{Component} from 'react';
 // import logo from './logo.svg';
 import MyInfo from "./components/MyInfo"
 import ContactCard from "./components/ContactCard"
+import Form from "./components/Form"
 import './App.css';
 
 class MyApp extends React.Component {
@@ -27,29 +28,13 @@ class MyApp extends React.Component {
   }
 };
 
-class GetInput extends React.Component {
-
-  render() {
-    return(
-      <div className="inputfield">
-        <h3>Get Input:</h3>
-        <input placeholder="Type your text here..." value={this.props.input} onChange={this.props.handleChange}/>
-      </div>
-    );
-    }
-  };
 
   class RenderInput extends React.Component {
 
     render(){
       return (
         <div id="render">
-          <h3>Input Render:</h3>
-          <div className="border">
-            <p className="text" style={{display:this.props.input?"block":"none"}}>{this.props.input}</p>
-          </div>
-          <MyInfo/>
-          <hr/>
+
           <ContactCard
             contact={{name:"Mr.Erlich Bachman", imgUrl:"http://placekitten.com/300/200",phone:"(222) 555-1234",
 
@@ -73,10 +58,30 @@ class GetInput extends React.Component {
             phone:"(122) 555-3456",email:"mrworld@me.com"}}
 
             />
+          <Form/>
+
+            <h3>Input Render:</h3>
+            <div className="border">
+              <p className="text" style={{display:this.props.input?"block":"none"}}>{this.props.input}</p>
+            </div>
+            <MyInfo/>
         </div>
       );
     }
   };
+
+  class GetInput extends React.Component {
+
+    render() {
+      return(
+        <div className="inputfield">
+          <h3>Get Input:</h3>
+          <input placeholder="Changing UI on the basis of user input..." value={this.props.input} onChange={this.props.handleChange}/>
+        </div>
+      );
+      }
+    };
+
 
 
 export default MyApp;

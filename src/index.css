@@ -53,7 +53,9 @@ input{
   height: 100%;
   margin: 10%
 
+
 }
+
 @media screen and (max-width:800px){
   .contact-card{
     display: block;
