@@ -82,6 +82,7 @@ class Form extends Component {
                 onChange={this.handleChange}
                 name="favColor"
               >
+                <option value="">--please choose a color--</option>
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
                 <option  value="red">Red</option>
